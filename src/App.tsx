@@ -14,7 +14,7 @@ const App: React.FC = () => {
     <Router>
       <TOCProvider>
         <SCPLayout>
-          <Routes>
+          <Routes basename="/Events-React/">
             <Route path="/" element={<Home />} />
             <Route path="/cinfo" element={<Cinfo />} />
             <Route path="/cassie" element={<CASSIE />} />
