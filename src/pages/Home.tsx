@@ -67,7 +67,7 @@ export const Home: React.FC = () => {
           <Card 
               title="Информация" 
               icon={Info} 
-              to="/database"
+              to="/information"
           />
           <Card 
               title="История" 
