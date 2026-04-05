@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { Shield, Home, Users, Info, Megaphone, IdCard, History } from 'lucide-react';
+import { Home, Users, Info, Megaphone, IdCard, History } from 'lucide-react';
 import { cn } from '../utils/cn';
 import { useTOCState } from '../context/TOCContext';
+import litery from '../assets/litery.png'
 
 const NavLink = ({ to, children, icon: Icon }: { to: string, children: React.ReactNode, icon: any }) => {
   const location = useLocation();
@@ -89,7 +90,7 @@ export const SCPLayout: React.FC<{ children: React.ReactNode }> = ({ children })
         <aside className="w-64 border-r border-zinc-800 bg-black flex flex-col shrink-0">
           <div className="p-8 border-b border-zinc-800">
             <div className="flex items-center gap-3 text-scp-orange mb-2">
-              <Shield className="w-8 h-8" />
+              <img src={litery} className="w-12 h-12" />
               <div className="flex flex-col">
                 <span className="text-xl font-black leading-none tracking-tighter">Events</span>
                 <span className="text-[10px] opacity-50 font-bold uppercase tracking-widest">Litery</span>
