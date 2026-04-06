@@ -80,7 +80,7 @@ export const Home: React.FC = () => {
           <StatCard label='Всего Custom-Info' value={TotalCinfo} />
           <StatCard label='Всего CASSIE' value={TotalCassie} />
           <StatCard label='Всего Ключ-карт' value={TotalKeycards} />
-          <StatCard label="Последнее обновление" value="05.04.2026" />
+          <StatCard label="Последнее обновление" value="06.04.2026" />
         </div>
       </div>
     </div>

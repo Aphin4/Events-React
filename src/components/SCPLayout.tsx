@@ -79,14 +79,12 @@ export const SCPLayout: React.FC<{ children: React.ReactNode }> = ({ children })
 
   return (
     <div className="min-h-screen bg-scp-bg text-zinc-200 selection:bg-scp-orange selection:text-black">
-      {/* Background elements */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
         <div className="scanline" />
       </div>
 
       <div className="flex h-screen relative z-10">
-        {/* Sidebar */}
         <aside className="w-64 border-r border-zinc-800 bg-black flex flex-col shrink-0">
           <div className="p-8 border-b border-zinc-800">
             <div className="flex items-center gap-3 text-scp-orange mb-2">
@@ -98,8 +96,8 @@ export const SCPLayout: React.FC<{ children: React.ReactNode }> = ({ children })
             </div>
             <div className="h-1 w-full bg-zinc-800 mt-4 relative overflow-hidden">
               <motion.div
-                animate={{ x: ['-100%', '100%'] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+                animate={{ x: ['-150%', '250%'] }}
+                transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
                 className="absolute inset-0 bg-scp-orange/40 w-1/2"
               />
             </div>
@@ -142,13 +140,11 @@ export const SCPLayout: React.FC<{ children: React.ReactNode }> = ({ children })
 
           <div className="p-6 border-t border-zinc-800 bg-zinc-900/20">
             <div className="flex items-center gap-2 text-zinc-500">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-[10px] uppercase font-bold tracking-tighter">Соединение стабильно</span>
+              <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+              <span className="text-[10px] uppercase font-bold tracking-tighter">Соединение нестабильно</span>
             </div>
           </div>
         </aside>
-
-        {/* Main Content */}
         <main className="flex-1 overflow-y-auto bg-zinc-950/20 relative" ref={contentRef}>
           
           <div className="p-12 max-w-6xl mx-auto">
