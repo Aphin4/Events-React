@@ -76,7 +76,7 @@ export const Keycards: React.FC = () => {
               </div>
             </div>
         </div>
-        </div>
+      </div>
       </InfoSection>
         <div className="border-b border-zinc-800" />
           <InfoSection title="Готовые ключ-карты">

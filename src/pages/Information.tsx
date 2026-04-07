@@ -10,6 +10,7 @@ import { Check } from 'lucide-react';
 import other1 from '../assets/other1.png';
 import other2 from '../assets/other2.png';
 import toolgun from '../assets/toolgun.png';
+import other3 from '../assets/other3.png'
 
 
 const Card = ({ children, title }: { children: React.ReactNode, title?: string }) => (
@@ -253,6 +254,92 @@ export const Information: React.FC = () => {
                         </div>
                       ))}
                   </div>
+                </p>
+              </div>
+              <div className="scp-panel p-8 rounded-2xl relative overflow-hidden group border-zinc-800 mt-4">
+                <h3 className='text-xl font-black uppercase tracking-widest text-white group-hover:scp-glitch border-l-2 border-scp-orange pl-3'>Свойства объектов</h3>
+                <p className='text-zinc-300 text-base leading-relaxed mt-2'>Команда <Code>mp mod</Code> позволяет изменять свойства созданных объектов:<br />
+                  <ul className='text-zinc-300 text-base leading-relaxed list-disc list-outside pl-5 pt-4 space-y-2 mb-4'>
+                    <li>Если просто прописать <Code>mp mod</Code>, то вы получите все свойства выделенного объекта и их значения.</li>
+                    <li>Узнать возможные значения свойства: <Code>mp mod `название свойства`</Code></li>
+                    <li>Задать свойство объекту: <Code>mp mod `название свойства` `значение свойства`</Code></li>
+                  </ul>
+                <div className="h-px bg-scp-orange/30 mt-6 mb-6" />
+                <div className='grid grid-cols-2 gap-8 items-start'>
+                  <div className='flex flex-col items-center gap-4'>
+                    <img src={other3} className='w-110 h-auto rounded-xl hover:scale-105 transition-transform' alt="Object Properties"/>
+                      <Code>При выделенном "примитиве"</Code>
+                  </div>
+                  <div className='flex flex-col items-start w-full'>
+                    <h4 className='text-white text-xl font-black uppercase tracking-widest self-center'>
+                      Свойства всех объектов
+                    </h4>
+                    <p className='text-zinc-300 text-base leading-relaxed mt-6'>
+                      <Code>MapName</Code> - название карты, к которой принадлежит объект.<br />
+                      <Code>ID</Code> - идентификатор объекта.<br />
+                      <Code>Room</Code> - название комнаты к которой принадлежит объект.<br />
+                      <Code>Index</Code> - Позволяет ставить объект в таких же комнатах изменяя значение этого свойства.<br />
+                      Чтобы объект появился в каждой такой же комнате поставьте значение -1, объект будет с такими же свойствами что и оригинальный, а так же будет обновляться при изменении оригинального объекта.
+                    </p>
+                  </div>
+                </div>
+                <div className="h-px bg-scp-orange/30 mt-6 mb-6" />
+                <h4 className='text-xl font-black uppercase tracking-widest text-white group-hover:scp-glitch border-l-2 border-scp-orange pl-3'>Свойства примитива</h4>
+                <div className="grid grid-cols-12 border border-zinc-800 rounded-lg divide-x divide-y divide-zinc-800  mt-4">
+                  <div className="col-span-2 row-span-1 p-4 flex items-center justify-center"><Code>PrimitiveType</Code></div>
+                  <div className="col-span-6 p-4 flex items-center">Тип примитива, по умолчанию это Cube. Вводить нужно либо числовое значение, либо буквенное.</div>
+                  <div className="col-span-4 p-4"><Code>0 - Sphere</Code><br /> <Code>1 - Capsule</Code><br /><Code>2 - Cylinder</Code><br /><Code>3 - Cube</Code><br /><Code>4 - Plane</Code><br /><Code>5 - Quad</Code></div>
+                  <div className="col-span-2 row-span-1 p-4 flex items-center justify-center"><Code>Color</Code></div>
+                  <div className="col-span-6 p-4 flex items-center">Цвет примитива, по умолчанию - красный. Принимает цвет как в формате HEX, таки в формате RGB. Цвет в HEX формате выглядит как #ff0000, а в RGB формате это будет 255:0:0:1. У RGB формата больше возможностей: если поставить значения цвета выше 255, а значение прозрачности (последняя цифра) меньше единицы, то у вас получится примитив который "светится" но не освещает вокруг себя ничего. И чем больше значения - тем ярче светится примитив.</div>
+                  <div className="col-span-4 p-4 flex items-center"><Code>#ff0000</Code><Code>255:0:0:1</Code></div>
+                  <div className="col-span-2 row-span-1 p-4 flex items-center justify-center"><Code>PrimitiveFlags</Code></div>
+                  <div className="col-span-6 p-4 flex items-center">Свойства видимости и коллизии объекта. Если вам нужно сделать невидимый барьер, то лучше сделать это через PrimitiveFlags</div>
+                  <div className="col-span-4 p-4"><Code>0 - невидимый и без коллизии</Code><br /><Code>1 - с коллизией, но невидимый</Code><br /><Code>2 - без коллизии, но видимый</Code><br /><Code>3 - видимый и с коллизией</Code></div>
+                </div>
+                <div className="h-px bg-scp-orange/30 mt-6 mb-6" />
+                <h4 className='text-xl font-black uppercase tracking-widest text-white group-hover:scp-glitch border-l-2 border-scp-orange pl-3'>Свойства источника света</h4>
+                <div className="grid grid-cols-12 border border-zinc-800 rounded-lg divide-x divide-y divide-zinc-800  mt-4">
+                  <div className="col-span-2 row-span-1 p-4 flex items-center justify-center"><Code>Color</Code></div>
+                  <div className="col-span-6 p-4 flex items-center">Цвет освещения. Воспринимает цвета в формате HEX.</div>
+                  <div className="col-span-4 p-4"><Code>1</Code></div>
+                  <div className="col-span-2 row-span-1 p-4 flex items-center justify-center"><Code>Intensity</Code></div>
+                  <div className="col-span-6 p-4 flex items-center">Яркость освещения</div>
+                  <div className="col-span-4 p-4 flex items-center"><Code>1</Code></div>
+                  <div className="col-span-2 row-span-1 p-4 flex items-center justify-center"><Code>Range</Code></div>
+                  <div className="col-span-6 p-4 flex items-center">Дистанция на которую источник будет светить</div>
+                  <div className="col-span-4 p-4"><Code>1</Code></div>
+                  <div className="col-span-2 row-span-1 p-4 flex items-center justify-center"><Code>Shadows</Code></div>
+                  <div className="col-span-6 p-4 flex items-center">Качество теней отбрасываемых объектами от света. Крайне не рекомендуется ставить мягкие тени</div>
+                  <div className="col-span-4 p-4"><Code>None - не отбрасывать тени</Code><br /><Code>Hard - отбрасывать обычные тени</Code><br /><Code>Soft - отбрасывать мягкие тени</Code></div>
+                  <div className="col-span-2 row-span-1 p-4 flex items-center justify-center"><Code>SpotAngle</Code></div>
+                  <div className="col-span-6 p-4 flex items-center">Угол освещения типом Spot. Не может превышать 179 градусов.</div>
+                  <div className="col-span-4 p-4"><Code>90</Code></div>
+                  <div className="col-span-2 row-span-1 p-4 flex items-center justify-center"><Code>LightType</Code></div>
+                  <div className="col-span-2 p-4 flex items-center">Тип освещения</div>
+                  <div className="col-span-8 p-4"><Code>Spot - освещение определенной области, как если бы на нее светил фонарь</Code><br /><Code>Directional - освещение всей карты в каком-то направлении</Code><br /><Code>Point - освещение из точки, все остальные типы не отличаются от него</Code></div>
+                </div>
+                <div className="h-px bg-scp-orange/30 mt-6 mb-6" />
+                <h4 className='text-xl font-black uppercase tracking-widest text-white group-hover:scp-glitch border-l-2 border-scp-orange pl-3'>Свойства дверей</h4>
+                <div className="grid grid-cols-12 border border-zinc-800 rounded-lg divide-x divide-y divide-zinc-800  mt-4">
+                  <div className="col-span-2 row-span-1 p-4 flex items-center justify-center"><Code>DoorType</Code></div>
+                  <div className="col-span-3 p-4 flex items-center">Тип двери</div>
+                  <div className="col-span-7 p-4"><Code>LightContainmentDoor - дверь из ЛЗС</Code><br /><Code>Hcz - дверь из ТЗС</Code><br /><Code>Ez - дверь из входной зоны</Code><br /><Code>Bulkdoor - современные гермоворота из ТЗС</Code><br /><Code>Gate - устаревшие гермоворота из других зон</Code></div>
+                  <div className="col-span-2 row-span-1 p-4 flex items-center justify-center"><Code>IsOpen</Code></div>
+                  <div className="col-span-3 p-4 flex items-center">Открыта ли дверь</div>
+                  <div className="col-span-7 p-4"><Code>False - закрыта</Code><br /><Code>True - открыта</Code></div>
+                  <div className="col-span-2 row-span-1 p-4 flex items-center justify-center"><Code>IsOpen</Code></div>
+                  <div className="col-span-3 p-4 flex items-center">Открыта ли дверь</div>
+                  <div className="col-span-7 p-4"><Code>False - закрыта</Code><br /><Code>True - открыта</Code></div>
+                  <div className="col-span-2 row-span-1 p-4 flex items-center justify-center"><Code>IsLocked</Code></div>
+                  <div className="col-span-3 p-4 flex items-center">Заблокирована ли дверь</div>
+                  <div className="col-span-7 p-4"><Code>False - разблокирована</Code><br /><Code>True - заблокирована</Code></div>
+                  <div className="col-span-2 row-span-1 p-4 flex items-center justify-center"><span className='text-sm'><Code>RequiredPermissions</Code></span></div>
+                  <div className="col-span-3 p-4 flex items-center">Требования к ключ-карте для открытия.</div>
+                  <div className="col-span-7 p-4"><Code>None - не требуется</Code><br /><Code>Checkpoints - карты с доступом к КПП</Code><br /><Code>ExitGates - карты с доступом к гейтам</Code><br /><Code>Intercom - карты с доступом к интеркому</Code><br /><Code>AlphaWarhead - карты с доступом к боеголовке</Code><br /><Code>ContainmentLevelOne - карты с 1УД к SCP</Code><br /><Code>ContainmentLevelTwo - карты со 2УД к SCP</Code><br /><Code>ContainmentLevelThree - карты с 3УД к SCP</Code><br /><Code>ArmoryLevelOne - карты с 1УД допуска к оружейным</Code><br /><Code>ArmoryLevelTwo - карты со 2УД к оружейным</Code><br /><Code>ArmoryLevelThree - карты с 3УД к оружейным</Code><br /><Code>ScpOverride - доступ только для SCP</Code></div>
+                  <div className="col-span-2 row-span-1 p-4 flex items-center justify-center"><Code>RequireAll</Code></div>
+                  <div className="col-span-3 p-4 flex items-center">Требуются ли все выше доступы для открытия двери</div>
+                  <div className="col-span-7 p-4"><Code>False - не требуются</Code><br /><Code>True - требуются</Code></div>
+                </div>
                 </p>
               </div>
             </p>
