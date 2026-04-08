@@ -44,8 +44,8 @@ const ItemCard: React.FC<ItemCardProps> = ({ item, id, copiedKey, setCopiedKey }
             setCopiedKey(id);
 
             ReactGA.event({
-              category: 'Interaction',
-              action: 'Копирование',
+              category: 'Взаимодействие',
+              action: 'copy_item',
               label: item.name,
               value: 1,
               nonInteraction: false,
