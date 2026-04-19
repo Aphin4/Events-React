@@ -402,9 +402,15 @@ export const Information: React.FC = () => {
                   <div className="col-span-5 p-4"><Code>Sport</Code><br /><Code>ClassD</Code><br /><Code>Binary</Code></div>
                 </div>
                 <div className="h-px bg-scp-orange/30 mt-6 mb-6" />
+                <h4 className='text-xl font-black uppercase tracking-widest text-white group-hover:scp-glitch border-l-2 border-scp-orange pl-3'>Свойства PlayerSpawnpoint</h4>
+                <div className="grid grid-cols-12 border border-zinc-800 rounded-lg divide-x divide-y divide-zinc-800  mt-4">
+                  <div className="col-span-2 row-span-1 p-4 flex items-center justify-center"><Code>Roles</Code></div>
+                  <div className="col-span-4 p-4 flex items-center">Роли которые будут возрождаться на этой точке. Если точек несколько, то будет выбрана случайная</div>
+                  <div className="col-span-6 p-4"><Code>add `id роли`</Code><br /><Code>remove `id роли`</Code><br /><Code>ID ролей нужно добавлять и удалять по одному, их можно найти ниже</Code></div>
+                </div>
+                <div className="h-px bg-scp-orange/30 mt-6 mb-6" />
                 <h4 className='text-xl font-black uppercase tracking-widest text-white group-hover:scp-glitch border-l-2 border-scp-orange pl-3'>Другие объекты</h4>
                 <div className="mt-4">
-                  <Code>PlayerSpawnpoint</Code> - работает некорректно<br />
                   <Code>Capybara</Code> - у нее нет свойств<br />
                   <Code>Interactable, Waypoint</Code> - не нужны вне схематика
                 </div>
@@ -504,11 +510,11 @@ export const Information: React.FC = () => {
                     <Check size={80/3} color='lightgreen'/>
                   </div>
                 </div>
-                Также можно выполнять команду для отдельных нескольких ID, достаточно прописать их через точку: <br /><Code>setname 13.23.33 ??? </Code><br />Это также работает и с id целых классов:  <br /><Code>setname ntfsergeant.classd.facilityguard ???</Code>            
+                Также можно выполнять команду для отдельных нескольких ID, достаточно прописать их через точку: <br /><Code>setname 13.23.33 ??? </Code><br />Это также работает и с id целых классов:  <br /><Code>setname ntfsergeant.classd.facilityguard ???</Code><br />ID роли можно найти в самой игре, нажмите по человеку с необходимой ролью {"-> Request Data -> Request."} В строке Class вы найдете класс, здоровье, щит SCP и щит от эффектов.      
               </p>
             </div>
               <Group title='Id классов' header={true}>
-                <p className='text-zinc-300 text-base leading-relaxed mt-2'>spectator - Наблюдатель <br />overwatch - Надзиратель <br />filmmaker - Режиссер <br />tutorial - Обучение <br />classd - Д-класс <br />facilityguard - Сотрудник безопасности <br />scientist - Научный сотрудник <br />chaosrepressor - Усмиритель ПХ <br />chaosmarauder - Мародёр ПХ <br />chaosrifleman - Стрелок ПХ <br />chaosconscript - Новобранец ПХ <br />ntfprivate - Рядовой МОГ <br />ntfsergeant - Сержант МОГ <br />ntfcaptain - Капитан МОГ <br />ntfspecialist - Специалист МОГ <br />scp049 - SCP-049 <br />scp3114 - SCP-3114 <br />scp939 - SCP-939 <br />scp079 - SCP-079 <br />scp0492 - SCP-049-2 <br />scp096 - SCP-096 <br />scp106 - SCP-106 <br />scp173 - SCP-173<br />Сокращения: <br />tut - Обучение <br />sci - Научный сотрудник <br />cld - Д-класс <br />Команды:  <br />ci - Повстанцы Хаоса <br />mtf - МОГ <br />scp - SCP <br />alive - Все живые игроки <br />rip - Все игроки в Наблюдателях и Надзирателях <br />civilian - Научные сотрудники и Д-класс <br />military - Оперативники МОГ, Повстанцы Хаоса, Служба безопасности <br />staff - Весь персонал фонда <br />nostaff - Все, кто не относится к персоналу  <br />all - Все <br />* - То же самое что и all</p>
+                  <p className='text-zinc-300 text-base leading-relaxed mt-2'>spectator - Наблюдатель <br />overwatch - Надзиратель <br />filmmaker - Режиссер <br />tutorial - Обучение <br />classd - Д-класс <br />facilityguard - Сотрудник безопасности <br />scientist - Научный сотрудник <br />chaosrepressor - Усмиритель ПХ <br />chaosmarauder - Мародёр ПХ <br />chaosrifleman - Стрелок ПХ <br />chaosconscript - Новобранец ПХ <br />ntfprivate - Рядовой МОГ <br />ntfsergeant - Сержант МОГ <br />ntfcaptain - Капитан МОГ <br />ntfspecialist - Специалист МОГ <br />scp049 - SCP-049 <br />scp3114 - SCP-3114 <br />scp939 - SCP-939 <br />scp079 - SCP-079 <br />scp0492 - SCP-049-2 <br />scp096 - SCP-096 <br />scp106 - SCP-106 <br />scp173 - SCP-173<br />Сокращения: <br />tut - Обучение <br />sci - Научный сотрудник <br />cld - Д-класс <br />Команды:  <br />ci - Повстанцы Хаоса <br />mtf - МОГ <br />scp - SCP <br />alive - Все живые игроки <br />rip - Все игроки в Наблюдателях и Надзирателях <br />civilian - Научные сотрудники и Д-класс <br />military - Оперативники МОГ, Повстанцы Хаоса, Служба безопасности <br />staff - Весь персонал фонда <br />nostaff - Все, кто не относится к персоналу  <br />all - Все <br />* - То же самое что и all</p>
               </Group>
           </div>          
         </div>
