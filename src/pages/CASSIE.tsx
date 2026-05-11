@@ -23,7 +23,11 @@ export const CASSIE: React.FC = () => {
         </InfoSection>
       <div className="border-b border-zinc-800" />
         <InfoSection title="Dev1lmachine">
-        <GoogleSheetsDataProvider><AccordionContainer databaseName='database4'/></GoogleSheetsDataProvider>
+          <GoogleSheetsDataProvider><AccordionContainer databaseName='database4'/></GoogleSheetsDataProvider>
+        </InfoSection>
+      <div className="border-b border-zinc-800" />
+        <InfoSection title="solosquad2008">
+          <GoogleSheetsDataProvider><AccordionContainer databaseName='database6'/></GoogleSheetsDataProvider>
         </InfoSection>
     </div>
   );

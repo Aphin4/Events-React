@@ -5,6 +5,7 @@ import { Code } from '@/components/Modules';
 import { InfoSectionCenter } from '@/components/Modules';
 import { X } from 'lucide-react';
 import { Check } from 'lucide-react';
+import { useRef } from 'react';
 import other1 from '../assets/other1.png';
 import other2 from '../assets/other2.png';
 import toolgun from '../assets/toolgun.png';
@@ -12,6 +13,13 @@ import other3 from '../assets/other3.png'
 
 export const Information: React.FC = () => {
   useTOC(true);
+
+  const roleRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    roleRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
       <div className="space-y-12 pb-24">
         <div className="border-b border-zinc-800 pb-12 flex items-center justify-between">
