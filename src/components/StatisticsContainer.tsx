@@ -27,13 +27,13 @@ export const StatisticsContainer: React.FC = () => {
     );
   }
   
-  const TCinfo = (data.database1?.length ?? 0) + (data.database2?.length ?? 0);
+  const TCinfo = (data.database1?.length ?? 0) + (data.database2?.length ?? 0) + (data.database7?.length ?? 0);
   const TotalCinfo = TCinfo.toString();
   
-  const TCassie = (data.database3?.length ?? 0) + (data.database4?.length ?? 0);
+  const TCassie = (data.database3?.length ?? 0) + (data.database4?.length ?? 0) + (data.database6?.length ?? 0);
   const TotalCassie = TCassie.toString();
   
-  const TKeycards = data.database5?.length ?? 0;
+  const TKeycards = (data.database5?.length ?? 0) + (data.database8?.length ?? 0);
   const TotalKeycards = TKeycards.toString();
 
   return (
