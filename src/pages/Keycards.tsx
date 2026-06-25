@@ -80,17 +80,17 @@ export const Keycards: React.FC = () => {
       </div>
       </InfoSection>
         <div className="border-b border-zinc-800" />
-          <InfoSection title="Смешанные ключ-карты">
+            <InfoSection title="Ключ-карты Burst173">
               <div>
                 <p className="text-zinc-400 my-4 font-bold uppercase tracking-widest text-sm border-l-2 border-scp-orange pl-4">
                   Введите id игрока/игроков и спользуйте кнопку справа от текста для копирования
                 </p>
-                <GoogleSheetsDataProvider><AccordionContainer databaseName='database5'/></GoogleSheetsDataProvider>
+                <GoogleSheetsDataProvider><AccordionContainer databaseName='database8'/></GoogleSheetsDataProvider>
               </div>
           </InfoSection>
-          <InfoSection title="Ключ-карты solosquad2008">
+          <InfoSection title="Смешанные ключ-карты">
               <div>
-                <GoogleSheetsDataProvider><AccordionContainer databaseName='database8'/></GoogleSheetsDataProvider>
+                <GoogleSheetsDataProvider><AccordionContainer databaseName='database5'/></GoogleSheetsDataProvider>
               </div>
           </InfoSection>
     </div>

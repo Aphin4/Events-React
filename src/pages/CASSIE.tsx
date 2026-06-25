@@ -22,12 +22,12 @@ export const CASSIE: React.FC = () => {
           <GoogleSheetsDataProvider><AccordionContainer databaseName='database3'/></GoogleSheetsDataProvider>
         </InfoSection>
       <div className="border-b border-zinc-800" />
-        <InfoSection title="Dev1lmachine">
-          <GoogleSheetsDataProvider><AccordionContainer databaseName='database4'/></GoogleSheetsDataProvider>
+        <InfoSection title="Burst173">
+          <GoogleSheetsDataProvider><AccordionContainer databaseName='database6'/></GoogleSheetsDataProvider>
         </InfoSection>
       <div className="border-b border-zinc-800" />
-        <InfoSection title="solosquad2008">
-          <GoogleSheetsDataProvider><AccordionContainer databaseName='database6'/></GoogleSheetsDataProvider>
+        <InfoSection title="Dev1lmachine">
+          <GoogleSheetsDataProvider><AccordionContainer databaseName='database4'/></GoogleSheetsDataProvider>
         </InfoSection>
     </div>
   );
