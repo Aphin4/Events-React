@@ -182,6 +182,20 @@ export const History: React.FC = () => {
             </Group>
           </div>
         </InfoSection>
+        <InfoSection title='Лето 2026'>
+          <div className="space-y-4 text-zinc-300 text-base leading-relaxed">
+            <Group title="29 Июня">
+              <div className="space-y-2">
+              <ul className='text-zinc-300 text-base leading-relaxed list-disc list-outside pl-5 pt-4 space-y-2'>
+                <li>Добавлены Cinfo и ключ-карты Burst173 и SoloSquad2008.</li>
+                <li>Удалены Cinfo от Dev1lMachine и смешанные ключ-карты.</li>
+                <li>Удалены старые Cinfo и ключ-карты SoloSquad2008.</li>
+                <li></li>
+              </ul>
+              </div>
+            </Group>
+          </div>
+        </InfoSection>
       </div>
   );
 };

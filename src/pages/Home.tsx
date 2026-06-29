@@ -1,7 +1,7 @@
 import React from 'react';
 import {  Users, Info, ArrowRight, Megaphone, IdCard, History } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { GoogleSheetsDataProvider } from '../context/GoogleSheetsDataContext'; // <-- Провайдер
+import { GoogleSheetsDataProvider } from '../context/GoogleSheetsDataContext';
 import { StatisticsContainer } from '../components/StatisticsContainer';
 
 const Card = ({ title, icon: Icon, to, color = "scp-orange" }: { title: string, icon?: any, to: string, color?: string, }) => (

@@ -25,7 +25,7 @@ export const Cinfo: React.FC = () => {
         <GoogleSheetsDataProvider><AccordionContainer databaseName='database7'/></GoogleSheetsDataProvider>
       </InfoSection>
       <div className="border-b border-zinc-800" />
-      <InfoSection title="Dev1lmachine">
+      <InfoSection title="SoloSquad2008">
         <GoogleSheetsDataProvider><AccordionContainer databaseName='database2'/></GoogleSheetsDataProvider>
       </InfoSection>
     </div>

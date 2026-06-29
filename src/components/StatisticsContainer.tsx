@@ -22,7 +22,7 @@ export const StatisticsContainer: React.FC = () => {
         <StatCardOnLoading />
         <StatCardOnLoading />
         <StatCardOnLoading />
-        <StatCard label="Последнее обновление" value="11.04.2026" />
+        <StatCard label="Последнее обновление" value="12.05.2026" />
       </>
     );
   }
@@ -41,7 +41,7 @@ export const StatisticsContainer: React.FC = () => {
       <StatCard label='Всего Custom-Info' value={TotalCinfo} />
       <StatCard label='Всего CASSIE' value={TotalCassie} />
       <StatCard label='Всего Ключ-карт' value={TotalKeycards} />
-      <StatCard label="Последнее обновление" value="11.04.2026" />
+      <StatCard label="Последнее обновление" value="12.05.2026" />
     </>
   );
 };
