@@ -24,7 +24,7 @@ export const Information: React.FC = () => {
       <div className="space-y-12 pb-24">
         <div className="border-b border-zinc-800 pb-12 flex items-center justify-between">
           <div className="max-w-2xl">
-            <h1 className="text-5xl font-black uppercase tracking-[0.19em] text-white">Полезная <div className='text-scp-orange'>Информация</div></h1>
+            <h1 className="text-2xl sm:text-5xl font-black uppercase tracking-wide sm:tracking-[0.19em] text-white">Полезная <span className="text-scp-orange">информация</span></h1>
               <p className="text-zinc-400 mt-4 font-bold uppercase tracking-widest text-base border-l-2 border-scp-orange pl-4">
                 Используйте оглавление слева для более удобной навигации
               </p>
@@ -33,19 +33,19 @@ export const Information: React.FC = () => {
           <InfoSectionCenter title="Custom-Info">
             <div className="block">
               <div className='grid grid-cols-4 space-x-4 text-[16px]'>
-                 <div className="scp-panel p-4 rounded-2xl relative overflow-hidden group border-zinc-800 mt-2 flex flex-col items-center justify-center">
+                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 bg-zinc-900/30 p-4 sm:p-5 rounded-xl border border-zinc-800/60 w-full overflow-hidden">
                   <span className='text-2xl'><Code>{"<size>"}</Code></span>
                   <br /> <span className='italic'>размер</span>
                   </div>
-                 <div className="scp-panel p-4 rounded-2xl relative overflow-hidden group border-zinc-800 mt-2 flex flex-col items-center justify-center">
+                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 bg-zinc-900/30 p-4 sm:p-5 rounded-xl border border-zinc-800/60 w-full overflow-hidden">
                   <span className='font-black text-zinc-200 inset-x-1 bottom-0 h-7 bg-zinc-800 -z-10 px-1.5'>{"<b>"}</span>
                   <br /> <span className='italic'>жирность</span>
                   </div>
-                 <div className="scp-panel p-4 rounded-2xl relative overflow-hidden group border-zinc-800 mt-2 flex flex-col items-center justify-center">
+                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 bg-zinc-900/30 p-4 sm:p-5 rounded-xl border border-zinc-800/60 w-full overflow-hidden">
                   <span className='italic'><Code>{"<i>"}</Code></span>
                   <br /> <span className='italic'>курсив</span>
                   </div>
-                 <div className="scp-panel p-4 rounded-2xl relative overflow-hidden group border-zinc-800 mt-2 flex flex-col items-center justify-center">
+                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 bg-zinc-900/30 p-4 sm:p-5 rounded-xl border border-zinc-800/60 w-full overflow-hidden">
                   <span className='text-scp-orange inset-x-1 bottom-0 h-7 bg-zinc-800 -z-10 px-1.5'>{"<color>"}</span>
                   <br /> <span className='italic'>цвет</span>
                   </div>

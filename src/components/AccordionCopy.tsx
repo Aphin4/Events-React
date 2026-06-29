@@ -55,6 +55,7 @@ const ItemCard: React.FC<ItemCardProps> = ({ item, id, copiedKey, setCopiedKey }
     setInputValues(newValues);
   };
 
+  // Улучшенный рендер инпутов: добавили удобные отступы для пальцев и выравнивание
   const renderCodeWithInputs = () => {
     if (!hasInputs) {
       return <>{item.code}</>;
@@ -77,8 +78,9 @@ const ItemCard: React.FC<ItemCardProps> = ({ item, id, copiedKey, setCopiedKey }
             onChange={(e) => updateInputValue(currentInputIndex, e.target.value)}
             placeholder={placeholder}
             onClick={(e) => e.stopPropagation()}
-            className="bg-zinc-800/50 border border-zinc-700 rounded-sm px-2 py-0.5 mx-1 text-xs text-zinc-300 min-w-[60px] max-w-[120px] focus:outline-none focus:ring-1 focus:ring-offset-0 focus:ring-zinc-600 transition-all placeholder:text-zinc-600"
-            style={{ width: `${Math.max(60, placeholder.length * 7)}px` }}
+            // Добавили py-1 для высоты, inline-block, align-middle и вертикальные маржи my-0.5, чтобы при переносе строк всё стояло ровно
+            className="bg-zinc-950 border border-zinc-800 focus:border-scp-orange/60 rounded px-2 py-1 mx-1 text-xs font-mono text-zinc-200 min-w-[75px] max-w-[150px] focus:outline-none transition-all placeholder:text-zinc-600 inline-block align-middle my-0.5"
+            style={{ width: `${Math.max(75, placeholder.length * 8)}px` }}
           />
         );
       }
@@ -87,9 +89,12 @@ const ItemCard: React.FC<ItemCardProps> = ({ item, id, copiedKey, setCopiedKey }
   };
 
   return (
-    <div className="bg-zinc-900/60 p-3 rounded border border-zinc-800 hover:border-scp-yellow transition-colors w-full overflow-hidden">
-      <div className="flex justify-between items-center mb-2">
-        <span className="text-[16px] font-bold text-zinc-300 uppercase tracking-tight truncate flex-1 mr-2">
+    // Добавили flex-col и зазоры gap-3, увеличили паддинги до p-4
+    <div className="bg-zinc-900/50 p-4 rounded-xl border border-zinc-800/80 hover:border-scp-orange/40 transition-all w-full overflow-hidden flex flex-col gap-3">
+      
+      {/* Шапка карточки: Название (теперь аккуратно переносится по словам) и более аккуратная кнопка */}
+      <div className="flex items-start justify-between gap-3">
+        <span className="text-sm sm:text-base font-bold text-zinc-300 uppercase tracking-tight break-words flex-1">
           {item.name}
         </span>
         <button
@@ -107,25 +112,33 @@ const ItemCard: React.FC<ItemCardProps> = ({ item, id, copiedKey, setCopiedKey }
 
             setTimeout(() => setCopiedKey(null), 2000);
           }}
-          className="p-1 hover:bg-zinc-800 rounded transition-colors shrink-0"
+          className={cn(
+            "p-2 rounded-lg transition-colors shrink-0 border flex items-center justify-center",
+            copiedKey === id 
+              ? "bg-green-950/30 border-green-800 text-green-400" 
+              : "bg-zinc-800/30 border-zinc-800 text-zinc-500 hover:bg-zinc-800 hover:text-zinc-300"
+          )}
         >
           {copiedKey === id ? (
-            <Check className="w-4 h-4 text-green-400" />
+            <Check className="w-4 h-4" />
           ) : (
-            <Copy className="w-4 h-4 text-zinc-500" />
+            <Copy className="w-4 h-4" />
           )}
         </button>
       </div>
-      <div className="rich-text-preview text-xs opacity-90 whitespace-pre-wrap wrap-break-word text-[#73737D]">
+
+      {/* Контейнер кода: Обернули в темную подложку bg-black/30, чтобы отделить от фона, и исправили перенос строк через break-words */}
+      <div className="rich-text-preview text-xs sm:text-sm opacity-90 whitespace-pre-wrap break-words text-[#94949E] bg-black/30 p-3 rounded-lg border border-zinc-950 leading-relaxed">
         {renderCodeWithInputs()}
       </div>
       
+      {/* Результат сборки: Сделали более явным и читаемым */}
       {hasInputs && inputValues.some(v => v.length > 0) && (
-        <div className="mt-2 pt-2 border-t border-zinc-800">
-          <div className="text-[10px] text-zinc-600 uppercase tracking-wider mb-1">
-            Результат:
+        <div className="pt-2 border-t border-zinc-800/80">
+          <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1 font-bold">
+            Результат сборки:
           </div>
-          <div className="text-xs text-zinc-400 font-mono">
+          <div className="text-xs text-scp-orange font-mono bg-zinc-950/50 p-2 rounded border border-zinc-900/50 break-all select-all">
             {finalCode}
           </div>
         </div>

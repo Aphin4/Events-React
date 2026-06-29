@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 
 export const InfoSection = ({ title, color = "scp-orange", children }: { title: string, color?: string, children: React.ReactElement}) => (
-  <div className="scp-panel p-8 rounded-2xl relative overflow-hidden group border-zinc-800">
+  <div className="scp-panel p-4 sm:p-8 rounded-2xl relative overflow-hidden group border-zinc-800">
     <div className={`absolute top-0 right-0 w-32 h-32 bg-${color}/5 blur-[60px] pointer-events-none group-hover:bg-${color}/10 transition-colors`} />
     <div className="flex items-start gap-6 relative z-10">
       <div className="flex-1 space-y-4">

@@ -11,7 +11,10 @@ export const Cinfo: React.FC = () => {
       <div className="space-y-12 pb-24">
       <div className="border-b border-zinc-800 pb-12 flex items-center justify-between">
         <div className="max-w-2xl">
-           <h1 className="text-5xl font-black uppercase tracking-[0.19em] text-white">Custom-Info</h1>
+           <h1 className="text-5xl font-black uppercase tracking-[0.19em] text-white"></h1>
+           <h1 className="text-2xl sm:text-5xl font-black uppercase tracking-wide sm:tracking-[0.19em] text-white">
+            Custom-Info
+          </h1>
            <p className="text-zinc-400 mt-4 font-bold uppercase tracking-widest text-base border-l-2 border-scp-orange pl-4">
              Введите id игрока/игроков и спользуйте кнопку справа от текста для копирования
            </p>

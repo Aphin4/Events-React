@@ -9,7 +9,7 @@ export const History: React.FC = () => {
       <div className="space-y-12 pb-24">
         <div className="border-b border-zinc-800 pb-12 flex items-center justify-between">
           <div className="max-w-2xl">
-            <h1 className="text-5xl font-black uppercase tracking-[0.19em] text-white">История <div className="text-scp-orange">изменений</div></h1>
+            <h1 className="text-2xl sm:text-5xl font-black uppercase tracking-wide sm:tracking-[0.19em] text-white">История <span className="text-scp-orange">изменений</span></h1>
               <p className="text-zinc-400 mt-4 font-bold uppercase tracking-widest text-base border-l-2 border-scp-orange pl-4">
                 Журнал изменений разбит на сезоны для удобства
               </p>
@@ -21,11 +21,14 @@ export const History: React.FC = () => {
               <p className='text-zinc-300 text-sm leading-relaxed font-medium space-y-4'>Этот сайт был создан 7 июня 2025 года. Однако первая публикация состоялась немного позже. <br />Она включала в себя лишь C.A.S.S.I.E от бывшего ГИМ(Frezee, ныне глава отдела) и скромный список кастом инфо от бывшего главы отдела (ComicManatee926).</p>
             </InfoSection>
           </div>
-          <InfoSection title="Последние изменения - 11.04.2026">
+          <InfoSection title="Последние изменения - 29.06.2026">
             <p className='text-zinc-300 text-sm leading-relaxed font-medium space-y-4'>
               <ul className='text-zinc-300 text-base leading-relaxed list-disc list-outside pl-5 pt-4 space-y-2'>
-                <li>Данные Custom-Info, CASSIE и ключ-карт подгружаются динамически, что может вызывать проблемы при первой перезагрузке.</li>
-                <li>Иправлено перепутанное количество Cusom-Info и CASSIE на главной странице.</li>
+                <li>Добавлены Cinfo и ключ-карты от Burst173 и solosquad2008.</li>
+                <li>Удалены Cinfo от Dev1lMachine и смешанные ключ-карты.</li>
+                <li>Удалены старые Cinfo и ключ-карты от solosquad2008.</li>
+                <li>Частично улучшена совместимость с мобильными устройствами и мониторами, но их использование крайне не рекомендуется из-за проблем на половине страниц.</li>
+                <li><span className='italic'>Кстати сайту уже больше года...</span></li>
               </ul>
             </p>
           </InfoSection>
@@ -187,10 +190,10 @@ export const History: React.FC = () => {
             <Group title="29 Июня">
               <div className="space-y-2">
               <ul className='text-zinc-300 text-base leading-relaxed list-disc list-outside pl-5 pt-4 space-y-2'>
-                <li>Добавлены Cinfo и ключ-карты Burst173 и SoloSquad2008.</li>
+                <li>Добавлены Cinfo и ключ-карты от Burst173 и solosquad2008.</li>
                 <li>Удалены Cinfo от Dev1lMachine и смешанные ключ-карты.</li>
-                <li>Удалены старые Cinfo и ключ-карты SoloSquad2008.</li>
-                <li></li>
+                <li>Удалены старые Cinfo и ключ-карты от solosquad2008.</li>
+                <li>Частично улучшена совместимость с мобильными устройствами и мониторами, но их использование крайне не рекомендуется из-за проблем на половине страниц.</li>
               </ul>
               </div>
             </Group>

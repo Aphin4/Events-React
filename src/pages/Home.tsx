@@ -24,10 +24,14 @@ export const Home: React.FC = () => {
   return (
     <div className="space-y-12">
       <div className="max-w-3xl">
-        <h1 className="mb-10 font-black uppercase"> 
-          <span className="block leading-none text-7xl tracking-[0.2em] text-white -mb-6">Терминал</span><br />
-          <span className="text-5xl tracking-[0.176em] text-scp-orange">Ивент-мастера</span>
-        </h1>
+          <h1 className="font-bold uppercase text-left mb-6 sm:mb-8 select-none">
+            <span className="font-black leading-none text-4xl sm:text-7xl tracking-wider sm:tracking-[0.2em] text-white block">
+              Терминал
+            </span>
+            <span className="text-xl sm:text-5xl tracking-normal sm:tracking-[0.176em] text-scp-orange block mt-2 sm:mt-1">
+              Ивент-мастера
+            </span>
+          </h1>
         <p className="text-lg text-zinc-400 font-medium border-l-4 border-scp-orange pl-6 py-2 uppercase tracking-wide">
           Используйте блоки ниже для быстрого поиска необходимой вам информации.
         </p>
@@ -50,18 +54,10 @@ export const Home: React.FC = () => {
           to="/keycards"
         />
         </div>
-      <div className="grid grid-cols-2 gap-7 -mt-6">
-          <Card 
-              title="Информация" 
-              icon={Info} 
-              to="/information"
-          />
-          <Card 
-              title="История" 
-              icon={History} 
-              to="/history"
-          />
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-7 mt-4 sm:-mt-6">
+        <Card title="Информация" icon={Info} to="/information" />
+        <Card title="История" icon={History} to="/history" />
+      </div>
       <div className='rounded-2xl p-4 relative group border-zinc-800 scp-panel mb-8 -mt-4'>
         <div className='grid grid-cols-1 lg:grid-cols-4 gap-7'>
           <GoogleSheetsDataProvider>

@@ -7,7 +7,7 @@ import keycard5 from '../assets/keycard5.png';
 import { Link } from 'react-router-dom';
 import { useTOC } from '../context/TOCContext';
 import { InfoSection } from '../components/Modules';
-import { Code } from '@/components/Modules';
+import { Code } from '../components/Modules'; // Исправил относительный импорт, если нужно
 import AccordionContainer from '../components/AccordionContainer';
 import { GoogleSheetsDataProvider } from '../context/GoogleSheetsDataContext';
 
@@ -23,76 +23,77 @@ export const Keycards: React.FC = () => {
 
   return (
     <div className="space-y-12 pb-24">
-      <div className="border-b border-zinc-800 pb-10 flex items-center justify-between">
+      {/* Адаптивный контейнер шапки */}
+      <div className="border-b border-zinc-800 pb-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="max-w-2xl">
-           <h1 className="text-5xl font-black uppercase tracking-[0.19em]">Ключ-Карты</h1>
-           <p className="text-zinc-400 mt-4 font-bold uppercase tracking-widest text-base border-l-2 border-scp-orange pl-4">
-            Всё, что нужно знать о кастомных ключ-картах и заранее заготовленные решения
+           <h1 className="text-2xl sm:text-5xl font-black uppercase tracking-wide sm:tracking-[0.19em]">
+             Ключ-<span className="text-scp-orange">карты</span>
+           </h1>
+           <p className="text-zinc-400 mt-2 text-xs sm:text-sm font-bold uppercase tracking-widest border-l-2 border-scp-orange pl-4">
+             Настройка кастомных ключ-карт на сервере
            </p>
-        </div>  
-      </div>
-      <InfoSection title="Создание своей ключ-карты">
-        <div className="block">
-          <img src={keycard1} className='float-left mr-6 my-4 w-48 h-auto rounded-md hover:scale-105 transition-transform' />
-
-          <p className='text-zinc-300 text-base leading-relaxed'>Вы можете создавать ключ-карты с помощью команды <Code>ckeycard</Code>
-          <br />Например: <Code>ckeycard 1 keycardcustommanagement Keycard 3 2 1 red black Ключ-карта blue Никнейм 1</Code>
-          <br /> <Code>1</Code> - id игрока  ( Например: 17 )
-          <br /><Code>keycardcustomanagement</Code> - внешний вид ключ-карты
-          <br /><Code>Keycard</Code> - название в инвентаре
-          <br /><Code>3</Code> - уровень допуска к SCP
-          <br /><Code>2</Code> - уровень допуска к оружию
-          <br /><Code>1</Code> - административный уровень допуска
-          <br /><Code>red</Code> - цвет кружков уровней допуска
-          <br /><Code>black</Code> - основной цвет карточки, фон текста
-          <br /><Code>Ключ-карта</Code> - надпись на ключ-карте
-          <br /><Code>blue</Code> - цвет текста
-          <br /><Code>Никнейм</Code> - кому принадлежит ключ-карта
-          <br /><Code>1</Code> - количество кружков вокруг отверстия (на ключ-карте МОГ)
-          </p>
-          <div className="scp-panel p-4 rounded-2xl relative overflow-hidden group border-zinc-800 mt-4">
-              <div className="flex-1 space-y-4">
-                  <p className='text-base text-white text-center'>Вместо <Code>keycardcustomanagement</Code> можно подставить один из вариантов:</p>
-                  <div className="grid grid-cols-4 gap-4">
-                    {keycardImages.map((item, idx) => (
-                      <div key={idx} className="text-center">
-                        <img src={item.src} className="w-full h-64 object-cover rounded-lg mb-2" alt={`Keycard ${idx + 1}`}/>
-                        <span className="text-sm">
-                          <Code>{item.code}</Code>
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-              </div>
-          </div>
-          <div className="scp-panel p-8 rounded-2xl relative overflow-hidden group border-zinc-800 mt-4">
-            <div className="flex items-start gap-6 relative z-10">
-              <div className="flex-1 space-y-4 ">
-                <h3 className='text-xl font-black uppercase tracking-widest text-white group-hover:scp-glitch border-l-2 border-scp-orange pl-4'>Несколько важных моментов</h3>
-                <div className="text-zinc-400 text-sm leading-relaxed font-medium space-y-4">
-                <ul className='text-zinc-300 text-base leading-relaxed list-disc list-outside pl-5 space-y-2'><li>Название в инвентаре можно сделать с пробелами с помощью <Code>_</Code> между словами.</li>
-                <li>Любые цвета ключ-карты можно сделать какими угодно с помощью слов на английском либо с помощью <Link to={"https://csscolor.ru/"} className='underline text-blue-600 font-normal'>HEX цвета</Link> (например <span className="text-red-600">red</span> это <span className="text-red-600">#f00</span>).</li>
-                <li>Основная надпись отображается на всех типах карт. Имя владельца выводится на всех моделях, за исключением keycardcustommanagement. Их также можно сделать с пробелами между словами с помощью <Code>_</Code></li></ul>
-                </div>
-              </div>
-            </div>
         </div>
       </div>
+
+      <InfoSection title="Кастомные модели">
+        <div className="space-y-8">
+          {/* Сетка картинок: 1 колонка на мобилках, 2 на планшетах, 4 на компах */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {keycardImages.map((img, index) => (
+              <div key={index} className="bg-zinc-950/60 border border-zinc-900 rounded-xl p-4 flex flex-col items-center justify-between gap-4">
+                <div className="w-full h-32 flex items-center justify-center overflow-hidden rounded-lg bg-black/20">
+                  <img src={img.src} alt={img.code} className="max-h-full object-contain transform hover:scale-105 transition-transform duration-300" />
+                </div>
+                {/* break-all не дает длинному id карты распирать блок вширь */}
+                <div className="w-full text-center">
+                  <p className="text-[10px] text-zinc-500 font-mono mb-1 uppercase tracking-wider">ID Предмета:</p>
+                  <code className="text-xs font-mono text-scp-orange bg-zinc-900/80 px-2 py-1 rounded block break-all select-all">
+                    {img.code}
+                  </code>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Информационный блок под картинками */}
+          <div className="bg-zinc-900/30 border border-zinc-800/60 rounded-xl p-4 sm:p-6 space-y-4">
+            <h4 className="text-sm font-black uppercase tracking-widest text-white flex items-center gap-2">
+              <div className="w-1 h-3 bg-scp-orange" /> Важная информация
+            </h4>
+            
+            <div className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
+              <ul className="list-disc list-outside pl-5 space-y-2">
+                <li>Все пробелы в названиях заменяются нижним подчеркиванием <Code>_</Code>.</li>
+                <li>
+                  Цвета ключ-карт настраиваются английскими названиями или цветом {' '}
+                  <Link to="https://csscolor.ru/" target="_blank" className="underline text-scp-orange hover:text-white transition-colors">
+                    HEX
+                  </Link> (например, <span className="text-red-500 font-bold">#f00</span>).
+                </li>
+                <li>Основная надпись и имя владельца выводятся на всех моделях, кроме <Code>keycardcustommanagement</Code>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </InfoSection>
-        <div className="border-b border-zinc-800" />
-            <InfoSection title="Burst173">
-              <div>
-                <p className="text-zinc-400 my-4 font-bold uppercase tracking-widest text-sm border-l-2 border-scp-orange pl-4">
-                  Введите id игрока/игроков и спользуйте кнопку справа от текста для копирования
-                </p>
-                <GoogleSheetsDataProvider><AccordionContainer databaseName='database8'/></GoogleSheetsDataProvider>
-              </div>
-          </InfoSection>
-          <InfoSection title="SoloSquad2008">
-              <div>
-                <GoogleSheetsDataProvider><AccordionContainer databaseName='database5'/></GoogleSheetsDataProvider>
-              </div>
-          </InfoSection>
+
+      <div className="border-b border-zinc-800" />
+      
+      {/* Секции с таблицами/аккордеонами из бд */}
+      <InfoSection title="Burst173">
+        <div>
+          <p className="text-zinc-400 my-4 font-bold uppercase tracking-widest text-xs sm:text-sm border-l-2 border-scp-orange pl-4">
+            Введите id игрока/игроков и используйте кнопку справа от текста для копирования
+          </p>
+          <GoogleSheetsDataProvider><AccordionContainer databaseName='database8'/></GoogleSheetsDataProvider>
+        </div>
+      </InfoSection>
+
+      <InfoSection title="SoloSquad2008">
+        <div>
+          <GoogleSheetsDataProvider><AccordionContainer databaseName='database5'/></GoogleSheetsDataProvider>
+        </div>
+      </InfoSection>
     </div>
   );
 };
