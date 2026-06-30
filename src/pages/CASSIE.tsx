@@ -24,10 +24,10 @@ export const CASSIE: React.FC = () => {
         <InfoSection title="Dev1lmachine">
           <GoogleSheetsDataProvider><AccordionContainer databaseName='database4'/></GoogleSheetsDataProvider>
         </InfoSection>
-      {/*<div className="border-b border-zinc-800" />
+      <div className="border-b border-zinc-800" />
         <InfoSection title="Burst173">
           <GoogleSheetsDataProvider><AccordionContainer databaseName='database6'/></GoogleSheetsDataProvider>
-        </InfoSection>*/}
+        </InfoSection>
     </div>
   );
 };
