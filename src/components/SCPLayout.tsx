@@ -110,14 +110,14 @@ export const SCPLayout: React.FC<{ children: React.ReactNode }> = ({ children })
               <img src={litery} className="w-12 h-12" />
               <div className="flex flex-col">
                 <span className="text-xl font-black leading-none tracking-tighter">Events</span>
-                <span className="text-[10px] opacity-50 font-bold uppercase tracking-widest">Litery</span>
+                <span className="text-[10px] opacity-50 font-bold uppercase tracking-widest">by Aphin</span>
               </div>
             </div>
             
             {/* Анимированная линия теперь служит нижней границей (border-b) */}
             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-zinc-800 overflow-hidden">
               <motion.div
-                animate={{ x: ['-150%', '250%'] }}
+                animate={{ x: ['-150%', '300%'] }}
                 transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
                 className="absolute inset-y-0 left-0 bg-scp-orange/50 w-1/3"
               />
